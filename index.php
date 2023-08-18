@@ -14,7 +14,7 @@
     <?
     require_once('system/loader.php');
     $uri = getRequestUri();
-    $uri = str_replace('/uncoxFrameworkMVC-2/', '/', $uri);
+    $uri = str_replace('/notes2-uncox-withMVC/', '/', $uri);
     $parts = explode('/', $uri);
     $controller = $parts[1];
     $method = $parts[2];
