@@ -33,7 +33,7 @@ function getRequestUri()
 
 function getBaseUrl()
 {
-    return "/uncoxFrameworkMVC-2/";
+    return "/notes2-uncox-withMVC/";
 }
 
 function strHas($str, $srch, $caseSensitive = false)

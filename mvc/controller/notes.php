@@ -1,9 +1,9 @@
 <?
 class NotesController
 {
-    function submit()
+    public function submit()
     {
-        if (isset($_POST['title'])) {
+        if (isset($_POST['id'])) {
 
             // $msg = "شما قبلا وارد سیستم شده اید " . "<a href=" . getBaseUrl() . "page/home" . "> اینجا</a>" .
             //     "برای ورود کلیک کنید " . "<br>" . "برای خارج شدن کلیک کنید" . "<a href=" . getBaseUrl() . "user/loguot>خروج</a>";
@@ -15,7 +15,7 @@ class NotesController
             Render::render('note/submit.php', array());
         }
     }
-    function submitNote()
+    public  function submitNote()
     {
         $id = $_POST['id'];
         $title = $_POST['title'];
@@ -23,6 +23,16 @@ class NotesController
         $time = $_POST['time'];
         $un = $_SESSION['uname'];
         NoteModel::insert($id, $title, $text, $time, $un);
-     
     }
+    public  function remove()
+    {
+        if (!isset($_GET['id'])) {
+            $msg = "رکوردی برای حذف پیدا نشد";
+            showmsg('fail', $msg, true);
+        }
+
+        $id = $_GET['id'];
+        NoteModel::delete($id);
+    }
+
 }
