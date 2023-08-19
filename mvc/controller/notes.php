@@ -4,10 +4,6 @@ class NotesController
     public function submit()
     {
         if (isset($_POST['id'])) {
-            // $msg = "شما قبلا وارد سیستم شده اید " . "<a href=" . getBaseUrl() . "page/home" . "> اینجا</a>" .
-            //     "برای ورود کلیک کنید " . "<br>" . "برای خارج شدن کلیک کنید" . "<a href=" . getBaseUrl() . "user/loguot>خروج</a>";
-            // require_once('mvc/view/message/success.php');
-            // exit;
             $this->submitNote();
         } else {
             Render::render('note/submit.php', array());
@@ -20,8 +16,7 @@ class NotesController
         $title = $_POST['title'];
         $text = $_POST['text'];
         $time = $_POST['time'];
-        $un = $_SESSION['uname'];
-        NoteModel::insert($id, $title, $text, $time, $un);
+        NoteModel::insert($id, $title, $text, $time);
     }
     /******************************************************************************************/
     public  function edit($params)
@@ -61,7 +56,7 @@ class NotesController
         // $id = $_GET['id'];
         $id = $params[0];
         NoteModel::delete($id);
-        $msg = "<h4>رکورد مورد نظر با موفقیت حذف شد.</h4> <br> <span>برای ورود به صفحه اصلی<a href=" . getBaseUrl() . "page/home> اینجا </a>کلیک کنید</span>";
-        showmsg('success', $msg, true);
+        // $msg = "<h4>رکورد مورد نظر با موفقیت حذف شد.</h4> <br> <span>برای ورود به صفحه اصلی<a href=" . getBaseUrl() . "page/home> اینجا </a>کلیک کنید</span>";
+        // showmsg('success', $msg, true);
     }
 }

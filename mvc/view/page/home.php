@@ -25,4 +25,4 @@
         </tr>
     <? } ?>
 </table><br>
-<div class="insertdiv"> <a class="insertrecord" href="insertNote.php">درج نت</a></div>
+<div class="insertdiv"> <a class="insertrecord" href="<?= getBaseUrl() ?>notes/submit">درج نت</a></div>

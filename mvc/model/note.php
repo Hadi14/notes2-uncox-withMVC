@@ -1,9 +1,10 @@
 <? class NoteModel
 {
     /*********************************************************************/
-    public static  function insert($id, $title, $text, $time, $un)
+    public static  function insert($id, $title, $text, $time)
     {
         $db = Db::getInstance();
+        $un=$_SESSION['uname'];
         $db->insert("insert into x_note (noteID,noteTitle,noteText,noteTime,username) values  ('$id','$title','$text','$time','$un')");
         header("Location: " . getBaseUrl() . "page/home");
     }
@@ -12,7 +13,7 @@
     {
         $db = Db::getInstance();
         $db->modify("delete from x_note where noteID='$id'");
-        // header("Location: " . getBaseUrl() . "page/home");
+        header("Location: " . getBaseUrl() . "page/home");
     }
     /*********************************************************************/
     public static function allNotes($un)

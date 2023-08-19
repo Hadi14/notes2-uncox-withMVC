@@ -1,4 +1,4 @@
-<form action="<?= getBaseUrl() ?>view/note/submit" method="post">
+<form action="<?= getBaseUrl() ?>notes/submit" method="post">
     <label for="noteid">NioteID</label>
     <input name="id" required id="noteid" type="text"><br>
     <label for="notetit">NoteTitle</label>
