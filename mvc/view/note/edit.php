@@ -1,5 +1,5 @@
 <form action="<?= getBaseUrl() ?>notes/edit/<?= $noteID ?>" method="post">
-    <label for="noteid">NioteID</label>
+    <label for="noteid">NoteID: </label>
     <input name="id" required id="noteid" type="text" value="<?= $noteID ?>"><br>
     <label for="notetit">NoteTitle</label>
     <input name="title" required id="notetit" type="text" value="<?= $noteTitle ?>"><br>
