@@ -50,13 +50,18 @@ class NotesController
         }
     }
     /******************************************************************************************/
-    public  function remove()
+    public  function remove($params)
     {
-        if (!isset($_GET['id'])) {
+        echo "Remove Method!!!";
+        // dump($params);
+        if (!$params[0]) {
             $msg = "رکوردی برای حذف پیدا نشد";
             showmsg('fail', $msg, true);
         }
-        $id = $_GET['id'];
+        // $id = $_GET['id'];
+        $id = $params[0];
         NoteModel::delete($id);
+        $msg = "<h4>رکورد مورد نظر با موفقیت حذف شد.</h4> <br> <span>برای ورود به صفحه اصلی<a href=" . getBaseUrl() . "page/home> اینجا </a>کلیک کنید</span>";
+        showmsg('success', $msg, true);
     }
 }

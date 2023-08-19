@@ -20,8 +20,8 @@
             <td><?= $row['noteTitle'] ?></td>
             <td><?= $row['noteText'] ?></td>
             <td><?= $row['noteTime'] ?></td>
-            <td><a href="<?= getBaseUrl() ?>notes/edit/<?= $row['noteID'] ?>/<?= $t ?>"><i class="bi bi-pencil-square"></i></a></td>
-            <td><a href="deleteNote.php?id=<?= $row['noteID'] ?>"><i class="bi bi-calendar-x"></i></a></td>
+            <td><a href="<?= getBaseUrl() ?>notes/edit/<?= $row['noteID'] ?>/<?= $t ?>"> <i class="bi bi-pencil-square"></i></a></td>
+            <td><a href="<?= getBaseUrl() ?>notes/remove/<?= $row['noteID'] ?>"> <i class="bi bi-calendar-x"></i></a></td>
         </tr>
     <? } ?>
 </table><br>

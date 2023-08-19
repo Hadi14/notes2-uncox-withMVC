@@ -12,7 +12,7 @@
     {
         $db = Db::getInstance();
         $db->modify("delete from x_note where noteID='$id'");
-        header("Location: " . getBaseUrl() . "page/home");
+        // header("Location: " . getBaseUrl() . "page/home");
     }
     /*********************************************************************/
     public static function allNotes($un)

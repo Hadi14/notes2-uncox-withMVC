@@ -1,6 +1,6 @@
 <? class Render
 {
-    public static function render($filePath, $data)
+    public static function render($filePath, $data=array())
     {
         echo "<br>renderform";
 
