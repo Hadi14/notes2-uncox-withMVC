@@ -24,8 +24,11 @@ class NotesController
         NoteModel::insert($id, $title, $text, $time, $un);
     }
     /******************************************************************************************/
-    public  function edit($nid, $ntitle, $ntext, $ntime, $un)
+    public  function edit($params)
     {
+        $nid=$params[0];
+        $ntitle=$params[1];
+        $un=$_SESSION['uname'];
         $rowAffect = NoteModel::edit($nid, $ntitle, $ntext, $ntime, $un);
         Render::render('note/submit.php', array());
 
