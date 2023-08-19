@@ -26,11 +26,14 @@ class NotesController
     /******************************************************************************************/
     public  function edit($params)
     {
-        $nid=$params[0];
-        $ntitle=$params[1];
-        $un=$_SESSION['uname'];
+        $data['id'] = $params[0];
+        $data['title'] = $params[0];
+        $data['text'] = $params[0];
+        $data['time'] = $params[0];
+
+        $un = $_SESSION['uname'];
         $rowAffect = NoteModel::edit($nid, $ntitle, $ntext, $ntime, $un);
-        Render::render('note/submit.php', array());
+        Render::render('note/edit.php', $data);
 
         if ($rowAffect) {
             $msg = "<h4>رکورد مورد نظر با موفقیت ویرایش شد.</h4> <br> <span>برای ورود به صفحه اصلی<a href=" . getBaseUrl() . "page/home> اینجا </a>کلیک کنید</span>";
