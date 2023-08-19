@@ -26,22 +26,26 @@ class NotesController
     /******************************************************************************************/
     public  function edit($params)
     {
-        $data['id'] = $params[0];
-        $data['title'] = $params[0];
-        $data['text'] = $params[0];
-        $data['time'] = $params[0];
+        echo "<hr>" . $_POST['id'] . "<hr>";
+        // if (!$_POST['id']) {
+        //     echo "Show Infoooooooooooooooooooooo:" . $_POST['id'];
+        $nid = $params[0];
+        // echo "<hr>this is noteID: $nid<hr>";
+        $row = NoteModel::first($nid);
 
         $un = $_SESSION['uname'];
-        $rowAffect = NoteModel::edit($nid, $ntitle, $ntext, $ntime, $un);
-        Render::render('note/edit.php', $data);
-
-        if ($rowAffect) {
-            $msg = "<h4>رکورد مورد نظر با موفقیت ویرایش شد.</h4> <br> <span>برای ورود به صفحه اصلی<a href=" . getBaseUrl() . "page/home> اینجا </a>کلیک کنید</span>";
-            showmsg("success", $msg, false);
-        } else {
-            $msg = "ویرایش رکورد با خطا روبرو شد لطفا مجددا سعی بفرمائید<br> <span>برای ورود به صفحه اصلی<a href=" . getBaseUrl() . "page/home> اینجا </a>کلیک کنید</span>";
-            showmsg('fail', $msg, true);
-        }
+        Render::render('note/edit.php', $row);
+        // } else {
+        //     echo "Sended info for editttttttttttttttttttttttttttt";
+        //     $rowAffect = NoteModel::edit($_POST['id'], $_POST['title'], $_POST['text'], $_POST['time'],);
+        //     if ($rowAffect) {
+        //         $msg = "<h4>رکورد مورد نظر با موفقیت ویرایش شد.</h4> <br> <span>برای ورود به صفحه اصلی<a href=" . getBaseUrl() . "page/home> اینجا </a>کلیک کنید</span>";
+        //         showmsg("success", $msg, false);
+        //     } else {
+        //         $msg = "ویرایش رکورد با خطا روبرو شد لطفا مجددا سعی بفرمائید<br> <span>برای ورود به صفحه اصلی<a href=" . getBaseUrl() . "page/home> اینجا </a>کلیک کنید</span>";
+        //         showmsg('fail', $msg, true);
+        //     }
+        // }
     }
     /******************************************************************************************/
     public  function remove()

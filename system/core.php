@@ -9,7 +9,7 @@ spl_autoload_register(function ($class_name) {
         return;
     }
     if (strHas($class_name, "Controller")) {
-        echo "<hr>Controller AutoLoad !!!!!!!!!!!!!!!!!! <hr>";
+        // echo "<hr>Controller AutoLoad !!!!!!!!!!!!!!!!!! <hr>";
         $fileName = str_replace("Controller", "", $class_name);
         $fileName = strtolower($fileName);
         require_once("mvc/controller/$fileName.php");

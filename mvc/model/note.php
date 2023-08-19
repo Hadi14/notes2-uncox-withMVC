@@ -23,12 +23,20 @@
         return $records;
     }
     /********************************************************************* */
-    public static function edit($nid, $ntitle, $ntext, $ntime, $un)
+    public static function edit($nid, $ntitle, $ntext, $ntime)
     {
         $db = Db::getInstance();
         $sql = "update x_note set noteTitle='$ntitle',noteText='$ntext',noteTime='$ntime' where noteID='$nid'";
         $rowAffect = $db->modify($sql);
         return $rowAffect;
+    }
+    /*********************************************************************/
+    public static function first($nid)
+    {
+        $db = Db::getInstance();
+        $sql = "select * from  x_note where noteID='$nid'";
+        $record = $db->first($sql);
+        return $record;
     }
     /*********************************************************************/
 }
