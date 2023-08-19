@@ -1,7 +1,6 @@
-<!-- <form action="<?= getBaseUrl() ?>notes/edit/<?= $noteID ?>" method="post"> -->
-<form action="temp.php" method="post">
+<form action="<?= getBaseUrl() ?>notes/edit/<?= $noteID ?>" method="post">
     <label for="noteid">NioteID</label>
-    <input name="id" required id="noteid" type="text" disabled value="<?= $noteID ?>"><br>
+    <input name="id" required id="noteid" type="text" value="<?= $noteID ?>"><br>
     <label for="notetit">NoteTitle</label>
     <input name="title" required id="notetit" type="text" value="<?= $noteTitle ?>"><br>
     <label for="notete">NoteText</label>
